@@ -1,7 +1,11 @@
 <?php
 
-namespace SilverShop\HasOneField;
+namespace WebTorque\AdvancedLink;
 
+use SilverShop\HasOneField\GridFieldHasOneEditButton;
+use SilverShop\HasOneField\GridFieldHasOneUnlinkButton;
+use SilverShop\HasOneField\GridFieldSummaryField;
+use SilverShop\HasOneField\HasOneButtonField;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\View\Requirements;
 use SilverStripe\Forms\GridField\GridField;
@@ -13,7 +17,7 @@ use SilverStripe\Forms\GridField\GridFieldAddExistingAutocompleter;
 /**
  * Class HasOneButtonField
  */
-class WTHasOneButtonField extends GridField
+class WTHasOneButtonField extends HasOneButtonField
 {
 
     /**
@@ -72,67 +76,5 @@ class WTHasOneButtonField extends GridField
 
         parent::__construct($fieldName ?: $relationName, $title, $list, ($customConfig) ?: $config);
         $this->setModelClass($record->ClassName);
-    }
-
-    /**
-     * @return \SilverStripe\ORM\DataObject
-     */
-    public function getRecord()
-    {
-        return $this->record;
-    }
-
-    /**
-     * @param DataObject|null $record
-     */
-    public function setRecord($record)
-    {
-        $this->record = $record ?: singleton(get_class($this->record));
-    }
-
-    /**
-     * Get the current parent
-     *
-     * @return DataObject
-     */
-    public function getParent()
-    {
-        return $this->parent;
-    }
-
-    /**
-     * Set the current parent
-     *
-     * @param DataObject $parent parent of the relationship
-     *
-     * @return self
-     */
-    public function setParent(DataObject $parent)
-    {
-        $this->parent = $parent;
-        return $this;
-    }
-
-    /**
-     * Get the name of the relation this field is managing
-     *
-     * @return string
-     */
-    public function getRelation()
-    {
-        return $this->relation;
-    }
-
-    /**
-     * Set the name of the relation this field is managing
-     *
-     * @param string $relation The relation name
-     *
-     * @return self
-     */
-    public function setRelation(string $relation)
-    {
-        $this->relation = $relation;
-        return $this;
     }
 }

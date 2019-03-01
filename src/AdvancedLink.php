@@ -1,6 +1,6 @@
 <?php
 
-namespace GraniteWorkshop\Models;
+namespace WebTorque\AdvancedLink;
 
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Assets\File;

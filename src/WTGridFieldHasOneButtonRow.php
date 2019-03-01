@@ -1,7 +1,8 @@
 <?php
 
-namespace SilverShop\HasOneField;
+namespace WebTorque\AdvancedLink;
 
+use SilverShop\HasOneField\GridFieldHasOneButtonRow;
 use SilverStripe\Dev\Debug;
 use SilverStripe\View\SSViewer;
 use SilverStripe\View\ArrayData;
